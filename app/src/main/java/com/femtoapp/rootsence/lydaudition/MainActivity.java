@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 
     private ItemAdapter itemAdapter;
 
+    /** 选中的item */
     public static final int SELECTOR = 10;
 
     private LinearLayoutManager layoutManager;
@@ -41,7 +42,7 @@ public class MainActivity extends Activity {
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
-                if(layoutManager.findLastVisibleItemPosition()==SELECTOR||layoutManager.findFirstVisibleItemPosition()==SELECTOR){
+                if(layoutManager.findLastVisibleItemPosition()==SELECTOR||layoutManager.findFirstVisibleItemPosition()==SELECTOR){ //判断列表的显示区域的第一或最后一个是否是选中的item
                     recyclerView.stopScroll();
                     recyclerView.scrollToPosition(10);
                 }
